@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="link">{{text}}</a>
+        <p>
+            连接地址：<input type="text" v-model="link">
+            <!-- 文本： <input type="text" v-model="text"> -->
+            <input type="text"
+                    value="text"
+                    @input="text=$event.target.value" >
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                link: "http://appcn.top",
+                text: "渡一课程"
+            }
+        })
+    </script>
+</body>
+</html>
